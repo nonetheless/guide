@@ -3,8 +3,7 @@ node {
         git 'https://github.com/nonetheless/guide.git'
     }
     stage('QA') {
-        def scHome = tool 'sonarqube-scanner'
-        sh "${scHome}/bin/sonar-scanner"
+        sh "/usr/local/sonar-scanner-2.8/bin/sonar-scanner"
     }
     stage('build') {
         def mvnHome = tool 'M3'
