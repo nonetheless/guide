@@ -27,7 +27,7 @@ public class AppServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Test Served at: ").append(request.getContextPath());
+		response.getWriter().append("Test1 Served at: ").append(request.getContextPath());
 	}
 
 	/**
