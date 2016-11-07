@@ -14,7 +14,7 @@ node {
         sh "docker stop my || true"
         sh "docker rm my || true"
         sh "docker run --name my -p 11111:8080 -d tomcat"
-        sh "docker cp target/homework.war my:/usr/local/tomcat/webapps"
+        sh "docker cp homework/target/homework.war my:/usr/local/tomcat/webapps"
     }
     stage('results') {
         archiveArtifacts artifacts: '**/target/*.war', fingerprint: true
