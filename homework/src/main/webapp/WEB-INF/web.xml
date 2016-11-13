@@ -17,6 +17,12 @@
   	<servlet-class>main.RiskAddServlet</servlet-class>
   </servlet>
   <servlet>
+  	<servlet-name>RiskStatusServlet</servlet-name>
+  	<display-name>RiskStatusServlet</display-name>
+  	<description></description>
+  	<servlet-class>main.RiskStatusServlet</servlet-class>
+  </servlet>
+  <servlet>
   	<servlet-name>LoginServlet</servlet-name>
   	<display-name>LoginServlet</display-name>
   	<description></description>
