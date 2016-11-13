@@ -45,9 +45,9 @@
 				    <label for="riskPosSel" class="col-sm-2 control-label">可能性</label>
 				    <div class="col-sm-10">
 				      <select class="form-control" id="riskPosSel" name="riskPos">
-				      	<option value="high">高</option>
-				      	<option value="middle">中</option>
-				      	<option value="low">低</option>
+				      	<option value="3">高</option>
+				      	<option value="2">中</option>
+				      	<option value="1">低</option>
 				      </select>
 				    </div>
 				  </div>
@@ -55,9 +55,9 @@
 				    <label for="riskPosSel" class="col-sm-2 control-label">影响程度</label>
 				    <div class="col-sm-10">
 				      <select class="form-control" id="riskAffectSel" name="riskAffect">
-				      	<option value="high">高</option>
-				      	<option value="middle">中</option>
-				      	<option value="low">低</option>
+				      	<option value="3">高</option>
+				      	<option value="2">中</option>
+				      	<option value="1">低</option>
 				      </select>
 				    </div>
 				  </div>
@@ -94,7 +94,7 @@ function submit(){
 	}
 	$.post("RiskAdd", $("#riskForm").serialize(), function(r){
 		if(r == 'success'){
-			window.location = "#";
+			window.location = "ProjectRisk";
 		}else{
 			alert("添加失败");
 		}

@@ -49,7 +49,7 @@ public class RiskManager {
 	public ArrayList<String> queryProjectNames() {
 		ArrayList<String> result=new ArrayList<String>();
 		
-		String sql="select projectName from risk";
+		String sql="select distinct projectName from risk";
 		try {
 			Statement statement=connection.createStatement();
 			ResultSet resultSet=statement.executeQuery(sql);
@@ -81,7 +81,7 @@ public class RiskManager {
 				riskDAO.setCreateTime(resultSet.getString(7));
 				riskDAO.setEndTime(resultSet.getString(8));
 				riskDAO.setProjectName(resultSet.getString(9));
-				riskDAO.setIsEnded(resultSet.getInt(10));
+				//riskDAO.setIsEnded(resultSet.getInt(10));
 				riskDAO.setContent(resultSet.getString(11));
 				result.add(riskDAO);
 			};
