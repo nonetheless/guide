@@ -6,7 +6,6 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpSession;
 
 import bl.UserManager;
 
@@ -24,10 +23,8 @@ public class RegisterServlet extends HttpServlet{
 		String password = request.getParameter("password");
 		userManager=new UserManager();
 		int result = userManager.register(user, password);
-		if(result==1){
-            //HttpSession session=request.getSession(true);  
-            //session.putValue("user", user);
-			request.getRequestDispatcher("login.jsp").forward(request,response);
+		if(result!=0){
+			request.getRequestDispatcher("Login.jsp").forward(request,response);
 		}
 	}
 
