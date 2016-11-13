@@ -10,7 +10,7 @@
 <body>
 	<form class="form-horizontal" action="LoginServlet" method="post" style="width:500px;height:300px;padding-top:50px;padding-left:300px;">
 		<span class="heading">用户登录</span>
-		<div class="form-group">
+		<div class="form-group" style="padding-top:20px">
 		<input class="form-control" type="text" name="user" placeholder="用户名">
 		<i class="fa fa-user"></i>
 		</div>
@@ -19,7 +19,7 @@
 		<i class="fa fa-user"></i>
 		</div>
 		<input class="btn btn-default" type="submit" value="登录">
-		<input class="btn btn-default" type="button" name="register" value="注册" onclick="javascript:register();">
+		<a onclick="register();" style="padding-left:50px">注册</a>
 		</form>
 	<p id="failText"></p>
 <script type="text/javascript" src="jquery-1.11.2.min.js" ></script>  
