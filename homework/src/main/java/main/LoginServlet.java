@@ -4,15 +4,16 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
-
-import com.sun.corba.se.impl.naming.pcosnaming.NameServer;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import bl.RiskManager;
 import bl.UserManager;
 
+@WebServlet("/Login")
 public class LoginServlet extends HttpServlet {
 
 	/**
@@ -22,8 +23,7 @@ public class LoginServlet extends HttpServlet {
 	UserManager userManager;
 	RiskManager riskManager;
 	
-	@Override
-	public void service(ServletRequest request,ServletResponse response) throws ServletException,IOException{
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String user = request.getParameter("user");
 		String password = request.getParameter("password");
 		userManager=new UserManager();
@@ -34,8 +34,14 @@ public class LoginServlet extends HttpServlet {
 		}else{
 			riskManager=new RiskManager();
 			ArrayList<String> names = riskManager.queryProjectNames();
+			HttpSession session = request.getSession();
+			session.setAttribute("user", user);
 			request.setAttribute("names", names);
 			request.getRequestDispatcher("ProjectRisks.jsp").forward(request,response);
 		}
+	}
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doGet(request,response);
 	}
 }

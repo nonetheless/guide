@@ -26,9 +26,15 @@ public class ProjectRiskServlet extends HttpServlet{
 		// TODO Auto-generated method stub
 		String name = request.getParameter("name");
 		riskManager = new RiskManager();
+		ArrayList<String> names = riskManager.queryProjectNames();
 		ArrayList<RiskDAO> risks = riskManager.queryRiskDAO(name);
-		PrintWriter out = response.getWriter();
-		out.print(risks);
+		request.setAttribute("riskList", risks);
+		request.setAttribute("names", names);
+		request.getRequestDispatcher("ProjectRisks.jsp").forward(request,response);
+	}
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doGet(request, response);
 	}
 
 }

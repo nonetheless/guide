@@ -32,8 +32,14 @@
   	<servlet-name>RegisterServlet</servlet-name>
   	<display-name>RegisterServlet</display-name>
   	<description></description>
-  	<servlet-class>main.RegisterServlet</servlet-class>  </servlet>
-
+  	<servlet-class>main.RegisterServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ProjectRiskServlet</servlet-name>
+  	<display-name>ProjectRiskServlet</display-name>
+  	<description></description>
+  	<servlet-class>main.ProjectRiskServlet</servlet-class>
+  </servlet>
   
   <servlet-mapping>
   	<servlet-name>AppServlet</servlet-name>
@@ -50,5 +56,9 @@
      <servlet-mapping>
   	<servlet-name>RegisterServlet</servlet-name>
   	<url-pattern>/RegisterServlet</url-pattern>
+  </servlet-mapping> 
+  <servlet-mapping>
+  	<servlet-name>ProjectRiskServlet</servlet-name>
+  	<url-pattern>/ProjectRiskServlet</url-pattern>
   </servlet-mapping> 
 </web-app>
