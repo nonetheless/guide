@@ -2,7 +2,6 @@ package util;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.SQLException;
 
 
 public class SqlHelper {
@@ -10,9 +9,9 @@ public class SqlHelper {
 
 	    public Connection connection ;
 	    
-	    public static final String SQL_URL="jdbc:mysql://127.0.0.1:3306/pm";
-	    public static final String USERNAME="root";
-	    public static final String PASSWORD="root";
+	    public static final String SQL_URL="jdbc:mysql://114.115.221.211:3306/test1";
+	    public static final String USERNAME="nju";
+	    public static final String PASSWORD="admin@12345";
 	    
 	    private static SqlHelper instance;
 	    public void init() {
@@ -42,7 +41,7 @@ public class SqlHelper {
 			return connection;
 		}
 
-		public static void main(String[] args) throws SQLException {
+//		public static void main(String[] args) throws SQLException {
 //			SqlHelper sqlHelper=new SqlHelper();
 
 //			if(sqlHelper.login("admin", "admin")==1){
@@ -53,7 +52,7 @@ public class SqlHelper {
 //				System.out.println("Register Success");
 //			}
 
-		}
+//		}
 		
 	
 		
