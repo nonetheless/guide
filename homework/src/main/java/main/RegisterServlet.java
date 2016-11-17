@@ -5,6 +5,7 @@ import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 
 import bl.UserManager;
@@ -23,9 +24,9 @@ public class RegisterServlet extends HttpServlet{
 		String password = request.getParameter("password");
 		userManager=new UserManager();
 		int result = userManager.register(user, password);
-		
-		request.getRequestDispatcher("Login.jsp").forward(request,response);
-		
+		if(result!=0){
+			request.getRequestDispatcher("Login.jsp").forward(request,response);
+		}
 	}
 
 }
