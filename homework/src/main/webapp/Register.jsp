@@ -8,7 +8,7 @@
 <title>注册</title>
 </head>
 <body>
-	<form class="form-horizontal" style="width:500px;height:300px;padding-top:50px;padding-left:300px;">
+	<form class="form-horizontal" action="RegisterServlet" method="post" style="width:500px;height:300px;padding-top:50px;padding-left:300px;">
 		<span class="heading">用户注册</span>
 		<div class="form-group" style="padding-top:20px">
 		<input class="form-control" type="text" name="user" id="user" placeholder="用户名">
