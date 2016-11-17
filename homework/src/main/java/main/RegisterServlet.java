@@ -23,9 +23,9 @@ public class RegisterServlet extends HttpServlet{
 		String password = request.getParameter("password");
 		userManager=new UserManager();
 		int result = userManager.register(user, password);
-		if(result!=0){
-			request.getRequestDispatcher("Login.jsp").forward(request,response);
-		}
+		
+		request.getRequestDispatcher("Login.jsp").forward(request,response);
+		
 	}
 
 }
